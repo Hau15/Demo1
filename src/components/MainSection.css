@@ -1,0 +1,81 @@
+/* Tổng thể cho MainSection */
+.main-section {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các phần tử con xuống dòng nếu không đủ không gian */
+  justify-content: center; /* Căn giữa nội dung ngang */
+  align-items: center; /* Căn giữa nội dung dọc */
+  padding: 20px;
+  gap: 20px; /* Khoảng cách giữa các phần tử */
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1; /* Mặc định chiếm 1 phần */
+  max-width: 300px; /* Chiều rộng tối đa của sidebar */
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Carousel */
+.carousel-container {
+  flex: 2; /* Chiếm không gian lớn hơn */
+  max-width: 600px; /* Chiều rộng tối đa của carousel */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container img {
+  width: 100%; /* Chiếm toàn bộ chiều rộng container */
+  height: auto; /* Đảm bảo tỷ lệ ảnh không bị méo */
+  display: block;
+  border-radius: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column; /* Chuyển các phần tử xếp chồng lên nhau */
+    gap: 15px; /* Giảm khoảng cách giữa các phần tử */
+  }
+
+  .sidebar {
+    max-width: 100%; /* Cho phép sidebar chiếm toàn bộ chiều rộng */
+    text-align: center; /* Căn giữa nội dung trong sidebar */
+  }
+
+  .carousel-container {
+    max-width: 100%; /* Cho phép carousel chiếm toàn bộ chiều rộng */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-header {
+    font-size: 18px; /* Giảm kích thước font trên màn hình nhỏ */
+  }
+
+  .category-list {
+    font-size: 12px; /* Giảm kích thước font của danh sách */
+  }
+
+  .carousel-container {
+    max-width: 100%; /* Luôn chiếm toàn bộ chiều rộng */
+  }
+}

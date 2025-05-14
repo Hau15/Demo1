@@ -1,0 +1,300 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 0px;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* General Layout */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Product List Styling */
+ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+ul li {
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #f4f4f4;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+ul li p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Button Styling */
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Footer Styling */
+/* Tổng quan Footer */
+.footer {
+  background-color: #1d1d1d; /* Màu nền tối */
+  color: #ffffff; /* Màu chữ trắng */
+  padding: 20px 20px;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5; /* Khoảng cách dòng nhỏ */
+}
+
+.footer-container {
+  max-width: 100%; /* Đảm bảo chiều rộng tối đa */
+  margin: 0 auto; /* Canh giữa footer */
+}
+
+/* Dòng (Row) trong Footer */
+.footer-row {
+  display: flex; /* Dùng Flexbox để các cột nằm trên một hàng */
+  flex-wrap: wrap; /* Đảm bảo responsive */
+  gap: 30px;
+  justify-content: space-between; /* Khoảng cách đều giữa các cột */
+  align-items: flex-start; /* Canh trên cùng */
+}
+
+/* Cột (Column) trong Footer */
+.footer-col {
+  flex: 1; /* Các cột chia đều không gian */
+  min-width: 200px; /* Đảm bảo kích thước tối thiểu */
+  background-color: #1d1d1d; /* Màu nền giống màu nền footer */
+  padding: 10px; /* Khoảng cách bên trong cột */
+  border-radius: 5px; /* Bo góc nhẹ */
+}
+
+.footer-col h5 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #f1c40f; /* Màu vàng nhấn mạnh */
+  text-transform: uppercase; /* Chữ in hoa */
+}
+
+/* Đường kẻ ngang (divider) */
+.divider {
+  height: 3px;
+  background-color: #f1c40f; /* Màu vàng nhấn mạnh */
+  margin-bottom: 15px;
+  width: 50px;
+  border-radius: 2px;
+}
+
+/* Nội dung trong các cột */
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #bfbfbf; /* Màu chữ xám nhạt */
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 2px;
+  background-color:#1d1d1d;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bfbfbf; 
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  box-shadow: none;
+  outline: none;
+}
+
+.footer-col ul li a:hover {
+  color: #f1c40f; /* Đổi sang màu vàng khi hover */
+}
+
+/* Phần Contact */
+.footer-col ul li i {
+  margin-right: 10px;
+  color: #f1c40f; /* Màu vàng nhấn mạnh */
+}
+
+/* Phần cuối Footer */
+.footer-bottom {
+  margin-top: 30px;
+  text-align: left;
+  font-size: 0.8rem;
+  color: #888888; /* Màu chữ xám đậm */
+  border-top: 1px solid #333333; /* Viền trên */
+  padding-top: 15px;
+}
+
+.footer-bottom a {
+  color: #f1c40f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff; /* Đổi sang màu trắng khi hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-row {
+    flex-wrap: wrap; /* Cho phép cột xuống dòng trên màn hình nhỏ */
+    gap: 20px;
+  }
+
+  .footer-col {
+    flex: 1 1 100%; /* Mỗi cột chiếm toàn bộ chiều rộng */
+  }
+}
+/* Header style */
+/* Header có chiều rộng toàn màn hình và luôn nằm phía trên cùng */
+.header {
+  position: fixed; /*Giữ header luôn ở trên cùng*/
+  top: 0;
+  left: 0;
+  width: 100%; /* Chiếm toàn bộ chiều rộng trình duyệt */
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 10px 0;
+  z-index: 1000; /* Đảm bảo header luôn trên các phần tử khác */
+  margin-bottom: 0px;
+}
+
+/* Giữ header nội dung bên trong căn giữa */
+.header-container {
+  max-width: 1200px; /* Chiều rộng tối đa của nội dung */
+  margin: 0 auto; /* Căn giữa */
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.nameshop {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding-left: 5px;
+  align-items: center;
+}
+
+.logoshop:hover{
+  text-decoration: none;
+  background-color: #ff2b2b;
+  border-radius: 100px;
+  padding-right: 10px;
+}
+
+.nameshop:hover{
+  color: white;
+  font-style: italic;
+}
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+/* Hover effect */
+.nav a:hover {
+  color: #ff7373;
+  text-decoration: none;
+}
+
+/* Banner style */
+.banner {
+  width: 100%; /* Đảm bảo Banner chiếm toàn bộ chiều ngang */
+  margin: 0 auto; /* Căn giữa nếu có giới hạn chiều rộng */
+  text-align: center; /* Căn giữa nội dung bên trong */
+    margin-top: 65px;
+}
+
+.banner-content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.jumbotron-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+a{
+  text-decoration: none;
+}
+
