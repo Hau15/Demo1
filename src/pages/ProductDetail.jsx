@@ -4,8 +4,9 @@ import { useCart } from "../contexts/CartContext"; // Import useCart từ CartCo
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import CustomAlert from "../components/CustomAlert"; // Import CustomAlert
-import "./ProductDetail.css"; // Import file CSS
 import Footer from "../components/Footer";
+import "./ProductDetail.css"; // Import file CSS
+import axios from 'axios';
 
 function ProductDetail() {
     const { id } = useParams();
@@ -16,12 +17,12 @@ function ProductDetail() {
     const [cartQuantity, setCartQuantity] = useState(1); // Trạng thái số lượng sản phẩm
     const [alert, setAlert] = useState(null); // Trạng thái cho alert
 
+
+    // Thay thế fetch bằng axios
     useEffect(() => {
-        // Fetch dữ liệu từ file JSON
-        fetch("/data/products.json")
-            .then((response) => response.json())
-            .then((data) => {
-                const foundProduct = data.find((p) => p.id === parseInt(id));
+        axios.get("/data/products.json")
+            .then((response) => {
+                const foundProduct = response.data.find((p) => p.id === parseInt(id));
                 setProduct(foundProduct);
                 if (foundProduct) {
                     setMainImage(foundProduct.image); // Đặt ảnh chính ban đầu

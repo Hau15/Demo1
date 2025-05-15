@@ -4,18 +4,20 @@ import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Footer from '../components/Footer';
 import MainSection from '../components/MainSection';
+import axios from 'axios';
 import './Home.css'; // Import CSS cho Home
 
 function Home() {
   const [products, setProducts] = useState([]);
 
+  
+
+  // Thay thế fetch bằng axios
   useEffect(() => {
-    // Fetch dữ liệu sản phẩm từ file JSON
-    fetch("/data/products.json")
-      .then((response) => response.json())
-      .then((data) => {
+    axios.get("/data/products.json")
+      .then((response) => {
         // Giới hạn chỉ lấy 4 sản phẩm
-        setProducts(data.slice(0, 4));
+        setProducts(response.data.slice(0, 4));
       })
       .catch((error) => console.error("Error fetching product data:", error));
   }, []);

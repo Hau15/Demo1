@@ -4,16 +4,18 @@ import "./ProductList.css"; // Import file CSS
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Footer from '../components/Footer';
+import axios from 'axios';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
 
+
+  // Thay thế fetch bằng axios
   useEffect(() => {
-    fetch("/data/products.json") // Lấy dữ liệu từ file JSON
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
+    axios.get("/data/products.json")
+      .then((response) => setProducts(response.data))
       .catch((error) => console.error("Error fetching product data:", error));
   }, []);
 
@@ -28,8 +30,8 @@ function ProductList() {
 
   return (
     <div className="product-list-container">
-        <Header />
-        <Banner />
+      <Header />
+      <Banner />
       <h1 className="product-list-title">Product List</h1>
 
       {/* Thanh tìm kiếm và bộ lọc */}
