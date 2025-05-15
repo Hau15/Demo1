@@ -74,72 +74,74 @@ function ProductDetail() {
     }
 
     return (
-        <div className="product-detail-container">
-            <Header />
-            <Banner />
+        <div>
+            <div className="product-detail-container">
+                <Header />
+                <Banner />
 
-            {/* Hiển thị CustomAlert nếu có */}
-            {alert && (
-                <CustomAlert
-                    message={alert.message}
-                    type={alert.type}
-                    onClose={() => setAlert(null)}
-                />
-            )}
-
-            <div className="product-detail-content">
-                {/* Cột bên trái: Hình ảnh */}
-                <div className="product-images">
-                    <img
-                        src={mainImage} // Hiển thị ảnh chính
-                        alt={product.name}
-                        className="product-main-image"
+                {/* Hiển thị CustomAlert nếu có */}
+                {alert && (
+                    <CustomAlert
+                        message={alert.message}
+                        type={alert.type}
+                        onClose={() => setAlert(null)}
                     />
-                    <div className="gallery-images">
-                        {product.images.map((image, index) => (
-                            <img
-                                key={index}
-                                src={image}
-                                alt={`${product.name} - ${index + 1}`}
-                                className={`gallery-image ${image === mainImage ? "active" : ""
-                                    }`} // Thêm class "active" nếu ảnh đang hiển thị là ảnh chính
-                                onClick={() => setMainImage(image)} // Khi click ảnh, đặt làm ảnh chính
-                            />
-                        ))}
-                    </div>
-                </div>
+                )}
 
-                {/* Cột bên phải: Thông tin sản phẩm */}
-                <div className="product-info">
-                    <h1 className="product-name">{product.name}</h1>
-                    <p className="product-description">{product.description}</p>
-                    <p className="product-price">Price: {product.price}</p>
-
-                    {/* Chọn số lượng sản phẩm */}
-                    <div className="product-quantity">
-                        <label htmlFor="quantity">Quantity: </label>
-                        <input
-                            type="number"
-                            id="quantity"
-                            min="1"
-                            value={cartQuantity}
-                            onChange={(e) => setCartQuantity(parseInt(e.target.value) || 1)}
+                <div className="product-detail-content">
+                    {/* Cột bên trái: Hình ảnh */}
+                    <div className="product-images">
+                        <img
+                            src={mainImage} // Hiển thị ảnh chính
+                            alt={product.name}
+                            className="product-main-image"
                         />
+                        <div className="gallery-images">
+                            {product.images.map((image, index) => (
+                                <img
+                                    key={index}
+                                    src={image}
+                                    alt={`${product.name} - ${index + 1}`}
+                                    className={`gallery-image ${image === mainImage ? "active" : ""
+                                        }`} // Thêm class "active" nếu ảnh đang hiển thị là ảnh chính
+                                    onClick={() => setMainImage(image)} // Khi click ảnh, đặt làm ảnh chính
+                                />
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Nút chức năng */}
-                    <div className="product-actions">
-                        <button onClick={handleAddToCart} className="add-to-cart-button">
-                            Add to Cart 🛒
-                        </button>
-                        <button onClick={handleBuyNow} className="buy-now-button">
-                            Buy Now
-                        </button>
-                    </div>
+                    {/* Cột bên phải: Thông tin sản phẩm */}
+                    <div className="product-info">
+                        <h1 className="product-name">{product.name}</h1>
+                        <p className="product-description">{product.description}</p>
+                        <p className="product-price">Price: {product.price}</p>
 
-                    <Link to="/products" className="back-link">
-                        ◀ Back to Products
-                    </Link>
+                        {/* Chọn số lượng sản phẩm */}
+                        <div className="product-quantity">
+                            <label htmlFor="quantity">Quantity: </label>
+                            <input
+                                type="number"
+                                id="quantity"
+                                min="1"
+                                value={cartQuantity}
+                                onChange={(e) => setCartQuantity(parseInt(e.target.value) || 1)}
+                            />
+                        </div>
+
+                        {/* Nút chức năng */}
+                        <div className="product-actions">
+                            <button onClick={handleAddToCart} className="add-to-cart-button">
+                                Add to Cart 🛒
+                            </button>
+                            <button onClick={handleBuyNow} className="buy-now-button">
+                                Buy Now
+                            </button>
+                        </div>
+
+                        <Link to="/products" className="back-link">
+                            ◀ Back to Products
+                        </Link>
+                    </div>
                 </div>
             </div>
             <Footer />
