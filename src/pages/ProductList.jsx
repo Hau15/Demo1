@@ -29,7 +29,8 @@ function ProductList() {
   });
 
   return (
-    <div className="product-list-container">
+    <div>
+      <div className="product-list-container">
       <Header />
       <Banner />
       <h1 className="product-list-title">Product List</h1>
@@ -78,7 +79,8 @@ function ProductList() {
           </div>
         ))}
       </div>
-      <Footer />
+    </div>
+     <Footer />
     </div>
   );
 }
